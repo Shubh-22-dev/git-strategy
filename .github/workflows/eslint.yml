@@ -38,7 +38,7 @@ jobs:
           
       - name: Intialize config 
         run: 
-          printf 'yes\n' | npm init @eslint/config -- --config standard
+          printf 'yes\nnpm\n' | npm init @eslint/config -- --config standard
 
       - name: Run ESLint
         run: npx eslint .
