@@ -37,20 +37,19 @@ jobs:
           npm install @microsoft/eslint-formatter-sarif@2.1.7
           
       - name: Intialize config 
-        run: |
+        run: 
           touch .eslintrc.js
+      
+      - name: edit config file
+        run:
           cat >> .eslintrc.js
-          module.exports = {
-            "env":{
-            "browser":true,
-                "es2021":true
-            },
-            "extends":"eslint:recommended",
-            "parserOptions":{
-                "ecmaVersion":"latest",
-                "sourceType":"module"
-            },
-          }
+          
+      - name: Add content 
+        run:
+          module.exports = {"env":{"browser":true,"es2021":true},"extends":"eslint:recommended","parserOptions":{"ecmaVersion":"latest","sourceType":"module"},}
+      
+      - name: open config file
+        run:
           cat .eslintrc.js
 
       - name: Run ESLint
