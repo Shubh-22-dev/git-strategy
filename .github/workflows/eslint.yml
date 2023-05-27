@@ -40,7 +40,9 @@ jobs:
         run: | 
           touch .eslintrc.js
           ls -a
-    
+          echo ‘module.exports = {"env": {"browser": true,"es2021": true},"extends": "eslint:recommended","parserOptions": {"ecmaVersion": "latest","sourceType": "module”},}’ >> .eslintrc.js
+          cat .eslintrc.js
+          
       - name: Run ESLint
         run: npx eslint .
           --config .eslintrc.js
