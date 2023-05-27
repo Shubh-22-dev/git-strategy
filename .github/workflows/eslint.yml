@@ -39,7 +39,7 @@ jobs:
       - name: Config Eslint
         run: | 
           touch .eslintrc.js
-          ls
+          ls -a
     
       - name: Run ESLint
         run: npx eslint .
