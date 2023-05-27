@@ -41,13 +41,10 @@ jobs:
           touch .eslintrc.js
       
       - name: edit config file
-        run:
+        run: |
           cat >> .eslintrc.js
-          
-      - name: Add content 
-        run:
           module.exports = {"env":{"browser":true,"es2021":true},"extends":"eslint:recommended","parserOptions":{"ecmaVersion":"latest","sourceType":"module"},}
-      
+     
       - name: open config file
         run:
           cat .eslintrc.js
