@@ -37,7 +37,7 @@ jobs:
           npm install @microsoft/eslint-formatter-sarif@2.1.7
           
       - name: Intialize config 
-        run:
+        run: |
           touch .eslintrc.js
           cat >> .eslintrc.js
           module.exports = {
