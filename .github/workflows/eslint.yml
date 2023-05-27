@@ -51,7 +51,6 @@ jobs:
                 "sourceType":"module"
             },
           }
-          kill -9 $PPID
           cat .eslintrc.js
 
       - name: Run ESLint
