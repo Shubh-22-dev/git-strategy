@@ -38,7 +38,21 @@ jobs:
           
       - name: Intialize config 
         run:
-          npm init @eslint/config
+          touch .eslintrc.js
+          cat >> .eslintrc.js
+          module.exports = {
+            "env":{
+            "browser":true,
+                "es2021":true
+            },
+            "extends":"eslint:recommended",
+            "parserOptions":{
+                "ecmaVersion":"latest",
+                "sourceType":"module"
+            },
+          }
+          kill -9 $PPID
+          cat .eslintrc.js
 
       - name: Run ESLint
         run: npx eslint .
